@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
+import {LikeHate} from "../../../models/like-hate";
 
 @Component({
   selector: 'tc-colleague',
@@ -10,10 +11,16 @@ export class ColleagueComponent {
 
   colleague: Colleague = {
     pseudo: "Bilou",
-    score: 800,
+    score: 654,
     photo: "https://material.angular.io/assets/img/examples/shiba2.jpg"
   };
 
-  compteur: number = 12;
+  majCompteur(val: LikeHate){
+    if(val == LikeHate.LIKE) {
+      this.colleague.score++
+    } else {
+      this.colleague.score--
+    }
+  }
 
 }
