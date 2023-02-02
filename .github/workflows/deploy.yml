@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
       - name: Install dependencies
@@ -35,9 +35,9 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Download build
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: deploy_dist
       - name: Deploiement sur Github Pages
