@@ -7,6 +7,7 @@ import { ColleagueComponent } from './components/colleague/colleague.component';
 import {MatCardModule} from "@angular/material/card";
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 import { ScorePipe } from './pipes/score.pipe';
+import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
 
 
 
@@ -15,7 +16,8 @@ import { ScorePipe } from './pipes/score.pipe';
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
-    ScorePipe
+    ScorePipe,
+    VotingHistoryComponent
   ],
     exports: [
         LikeHateComponent,
