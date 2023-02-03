@@ -9,6 +9,9 @@ import { ColleagueListComponent } from './components/colleague-list/colleague-li
 import { ScorePipe } from './pipes/score.pipe';
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
 import { VoteComponent } from './components/vote/vote.component';
+import { CounterComponent } from './components/counter/counter.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatBadgeModule} from "@angular/material/badge";
 
 @NgModule({
   declarations: [
@@ -17,19 +20,23 @@ import { VoteComponent } from './components/vote/vote.component';
     ColleagueListComponent,
     ScorePipe,
     VotingHistoryComponent,
-    VoteComponent
+    VoteComponent,
+    CounterComponent
   ],
   exports: [
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
-    VotingHistoryComponent
+    VotingHistoryComponent,
+    CounterComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatBadgeModule
   ]
 })
 export class SharedModule { }
