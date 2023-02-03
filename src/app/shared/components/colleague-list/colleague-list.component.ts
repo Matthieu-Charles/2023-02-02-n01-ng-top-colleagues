@@ -15,7 +15,7 @@ export class ColleagueListComponent implements OnInit {
       let tempColleague = {
         pseudo: "Bilou " + i,
         score: 654,
-        photo: "https://via.placeholder.com/150"
+        photo: "https://picsum.photos/150"
       };
       this.listeCollegue.push(tempColleague);
   }

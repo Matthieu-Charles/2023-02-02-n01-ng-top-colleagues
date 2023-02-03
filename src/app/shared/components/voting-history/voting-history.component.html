@@ -1,1 +1,10 @@
-<p>voting-history works!</p>
+<div>
+  <mat-card>
+    <mat-card-content>
+      <h2>Historique</h2>
+    </mat-card-content>
+  </mat-card>
+
+  <tc-vote *ngFor="let vote of listVotes; let i=index" [vote] = vote (suppressionVote)="majListe($event)" [colindex] = i></tc-vote>
+</div>
+

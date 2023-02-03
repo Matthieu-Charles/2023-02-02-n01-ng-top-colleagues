@@ -8,8 +8,7 @@ import {MatCardModule} from "@angular/material/card";
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
-
-
+import { VoteComponent } from './components/vote/vote.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +16,15 @@ import { VotingHistoryComponent } from './components/voting-history/voting-histo
     ColleagueComponent,
     ColleagueListComponent,
     ScorePipe,
+    VotingHistoryComponent,
+    VoteComponent
+  ],
+  exports: [
+    LikeHateComponent,
+    ColleagueComponent,
+    ColleagueListComponent,
     VotingHistoryComponent
   ],
-    exports: [
-        LikeHateComponent,
-        ColleagueComponent,
-        ColleagueListComponent
-    ],
   imports: [
     CommonModule,
     MatButtonModule,

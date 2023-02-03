@@ -1,0 +1,16 @@
+<mat-card class="history-vote-card">
+  <mat-card-header>
+    <mat-card-title>Un vote pour {{vote.colleague.pseudo}}!!</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-image src="{{vote.colleague.photo}}" alt="Photo of {{vote.colleague.pseudo}}">
+    <p>
+      {{vote.colleague.pseudo}} est <span *ngIf="vote.colleague.score<0; else adoreBlock">détesté :(</span>, il a désormais un score de {{vote.colleague.score}}
+    </p>
+    <ng-template #adoreBlock>adoré :) </ng-template>
+    <mat-card-actions>
+      <button (click)="clickSuppressionVote()">Supprimer</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
