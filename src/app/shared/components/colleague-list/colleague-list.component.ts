@@ -1,25 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
+import {ColleagueService} from "../../../providers/colleague.service";
 
 @Component({
   selector: 'tc-colleague-list',
   templateUrl: './colleague-list.component.html',
   styleUrls: ['./colleague-list.component.scss']
 })
-export class ColleagueListComponent implements OnInit {
+export class ColleagueListComponent {
 
-  listeCollegue:Colleague[] = [];
-
-  ngOnInit(){
-    for(var i = 1; i<15; i++){
-      let tempColleague = {
-        pseudo: "Bilou " + i,
-        score: 2,
-        photo: "https://picsum.photos/150"
-      };
-      this.listeCollegue.push(tempColleague);
-  }
+  constructor(private cls: ColleagueService) {}
+  listeCollegue:Colleague[] = this.cls.list();
 
 }
 
-}
+
