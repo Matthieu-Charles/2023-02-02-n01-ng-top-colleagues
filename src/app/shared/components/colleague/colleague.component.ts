@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
 
@@ -7,13 +7,13 @@ import {LikeHate} from "../../../models/like-hate";
   templateUrl: './colleague.component.html',
   styleUrls: ['./colleague.component.scss']
 })
-export class ColleagueComponent {
+export class ColleagueComponent{
 
-  colleague: Colleague = {
-    pseudo: "Bilou",
-    score: 654,
-    photo: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-  };
+  @Input() colleague:Colleague = {
+    photo: "testPhoto",
+    pseudo: "test",
+    score: 1
+  }
 
   majCompteur(val: LikeHate){
     if(val == LikeHate.LIKE) {

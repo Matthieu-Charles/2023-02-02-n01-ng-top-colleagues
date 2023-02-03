@@ -5,18 +5,21 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { ColleagueComponent } from './components/colleague/colleague.component';
 import {MatCardModule} from "@angular/material/card";
+import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 
 
 
 @NgModule({
   declarations: [
     LikeHateComponent,
-    ColleagueComponent
+    ColleagueComponent,
+    ColleagueListComponent
   ],
-  exports: [
-    LikeHateComponent,
-    ColleagueComponent
-  ],
+    exports: [
+        LikeHateComponent,
+        ColleagueComponent,
+        ColleagueListComponent
+    ],
   imports: [
     CommonModule,
     MatButtonModule,
