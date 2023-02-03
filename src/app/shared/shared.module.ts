@@ -6,6 +6,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { ColleagueComponent } from './components/colleague/colleague.component';
 import {MatCardModule} from "@angular/material/card";
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
+import { ScorePipe } from './pipes/score.pipe';
 
 
 
@@ -13,7 +14,8 @@ import { ColleagueListComponent } from './components/colleague-list/colleague-li
   declarations: [
     LikeHateComponent,
     ColleagueComponent,
-    ColleagueListComponent
+    ColleagueListComponent,
+    ScorePipe
   ],
     exports: [
         LikeHateComponent,
