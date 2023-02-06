@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EventBusService} from "../../../providers/event-bus.service";
 import {EventLikeOrHate} from "../../events/EventLikeOrHate";
 
@@ -7,7 +7,7 @@ import {EventLikeOrHate} from "../../events/EventLikeOrHate";
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent {
+export class CounterComponent implements OnInit{
   matBadgeDown: number = 0;
   matBadgeUp: number = 0;
 
