@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {LikeHate} from "../../../models/like-hate";
-import {EventBusService} from "../../../providers/event-bus.service";
-import {EventLikeOrHate} from "../../events/EventLikeOrHate";
+import {ColleagueService} from "../../../providers/colleague.service";
 
 @Component({
   selector: 'tc-like-hate',
@@ -10,14 +9,14 @@ import {EventLikeOrHate} from "../../events/EventLikeOrHate";
 })
 export class LikeHateComponent {
 
-  constructor(private evbus: EventBusService) {
+  constructor(private colleagueSrv: ColleagueService) {
   }
   LikeHate = LikeHate;
   @Input() compteur:number = 0;
   @Output() clickLoveOrHate:EventEmitter<LikeHate> = new EventEmitter<LikeHate>();
   LikeOrHate(likehate: LikeHate){
     this.clickLoveOrHate.emit(likehate);
-    this.evbus.emit(new EventLikeOrHate('EventLikeOrHate', likehate));
+    this.colleagueSrv.emit(likehate);
   }
 
 }
