@@ -11,7 +11,7 @@ export class ColleagueService {
   list(): Colleague[] {
     let listeCollegue: Colleague[] = [];
 
-    for (var i = 1; i < 15; i++) {
+for (var i = 1; i < 15; i++) {
       let tempColleague = {
         pseudo: "Bilou " + i,
         score: 2,
