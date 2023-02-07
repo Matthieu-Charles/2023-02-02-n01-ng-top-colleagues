@@ -1,4 +1,4 @@
-<form (ngSubmit)="submit()" #monForm="ngForm">
+<form (ngSubmit)="submit()" #monForm="ngForm" tcFirstLastValidator>
   <div>
     <label>Prénom</label><br>
     <input [(ngModel)]="createColleagueForm.first" name="prenom" #prenom="ngModel" required minlength="2">

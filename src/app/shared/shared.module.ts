@@ -14,6 +14,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import {FormsModule} from "@angular/forms";
+import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule} from "@angular/forms";
     VotingHistoryComponent,
     VoteComponent,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    FirstLastValidatorDirective
   ],
     exports: [
         LikeHateComponent,
