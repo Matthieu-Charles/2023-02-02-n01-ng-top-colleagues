@@ -12,6 +12,8 @@ import { VoteComponent } from './components/vote/vote.component';
 import { CounterComponent } from './components/counter/counter.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
+import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,22 +23,25 @@ import {MatBadgeModule} from "@angular/material/badge";
     ScorePipe,
     VotingHistoryComponent,
     VoteComponent,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ],
-  exports: [
-    LikeHateComponent,
-    ColleagueComponent,
-    ColleagueListComponent,
-    VotingHistoryComponent,
-    CounterComponent
-  ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-    MatCardModule,
-    MatIconModule,
-    MatBadgeModule
-  ]
+    exports: [
+        LikeHateComponent,
+        ColleagueComponent,
+        ColleagueListComponent,
+        VotingHistoryComponent,
+        CounterComponent,
+        CreateColleagueFormsComponent
+    ],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatCardModule,
+        MatIconModule,
+        MatBadgeModule,
+        FormsModule
+    ]
 })
 export class SharedModule { }

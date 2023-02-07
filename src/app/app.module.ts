@@ -7,20 +7,24 @@ import {SharedModule} from "./shared/shared.module";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {WelcomeModule} from "./pages/welcome/welcome.module";
 import {HttpClientModule} from "@angular/common/http";
+import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    SharedModule,
-    WelcomeModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        SharedModule,
+        WelcomeModule,
+        HttpClientModule,
+        CreateColleagueModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

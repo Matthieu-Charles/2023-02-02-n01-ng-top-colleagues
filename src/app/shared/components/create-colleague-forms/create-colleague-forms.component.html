@@ -1,0 +1,40 @@
+<form (ngSubmit)="submit()" #monForm="ngForm">
+  <div>
+    <label>Prénom</label><br>
+    <input [(ngModel)]="createColleagueForm.first" name="prenom" #prenom="ngModel" required minlength="2">
+
+    <p *ngIf="prenom.dirty && prenom.invalid">
+      le champ doit comporter au minimum deux caractères
+    </p>
+
+  </div>
+  <div>
+    <label>Nom</label><br>
+    <input [(ngModel)]="createColleagueForm.last" name="nom" #nom="ngModel" required minlength="2">
+
+    <p *ngIf="nom.dirty && nom.invalid">
+      le champ doit comporter au minimum deux caractères
+    </p>
+
+  </div>
+
+  <div>
+    <label>Pseudo</label><br>
+    <input [(ngModel)]="createColleagueForm.pseudo" name="pseudo" #pseudo="ngModel" required>
+
+    <p *ngIf="pseudo.dirty && pseudo.invalid">
+      le champ est obligatoire
+    </p>
+
+  </div>
+  <div>
+    <label>Photo url</label><br>
+    <input [(ngModel)]="createColleagueForm.photo" name="photoUrl" #photoUrl="ngModel" required>
+
+    <p *ngIf="photoUrl.dirty && photoUrl.invalid">
+      le champ est obligatoire
+    </p>
+
+  </div><br>
+  <button type="submit" *ngIf="monForm.valid && monForm.dirty">Valider</button>
+</form>

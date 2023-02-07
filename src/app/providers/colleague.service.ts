@@ -4,6 +4,7 @@ import {Observable, Subject, tap} from "rxjs";
 import {LikeHate} from "../models/like-hate";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {VoteApi} from "../models/voteApi";
+import {createColleagueForm} from "../models/createColleagueForm";
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,38 @@ export class ColleagueService {
       ).pipe(
         tap(()=> this.emit(val))
       );
+  }
+
+
+    // POST https://dev.cleverapps.io/api/v2/colleagues
+    //   Content-Type: application/json
+    //
+    // {
+    //   "pseudo":  "demo01",
+    //   "last" :  "demoLast",
+    //   "first": "demoFirst",
+    //   "photo" :  "https://randomuser.me/api/portraits/men/90.jpg"
+    // }
+
+
+  createColleague(colleague: createColleagueForm) :Observable<any> {
+    console.log("dans create Colleague");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    };
+    return this.http
+      .post<createColleagueForm>(
+        'https://dev.cleverapps.io/api/v2/colleagues',
+        {
+          "pseudo":  colleague.pseudo,
+          "last" :  colleague.last,
+          "first": colleague.first,
+          "photo" :  "https://randomuser.me/api/portraits/men/90.jpg"
+        },
+        httpOptions
+      )
   }
 
 }
