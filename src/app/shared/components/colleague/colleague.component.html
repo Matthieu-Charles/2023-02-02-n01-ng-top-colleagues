@@ -10,7 +10,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <tc-like-hate (clickLoveOrHate)="majCompteur($event)" [compteur] = this.colleague.score></tc-like-hate>
+    <tc-like-hate (clickLoveOrHate)="envoiVote($event)" [compteur] = this.colleague.score></tc-like-hate>
   </mat-card-actions>
 </mat-card>
 

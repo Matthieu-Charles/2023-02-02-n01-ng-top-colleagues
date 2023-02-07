@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {WelcomeModule} from "./pages/welcome/welcome.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {WelcomeModule} from "./pages/welcome/welcome.module";
     BrowserAnimationsModule,
     MatSlideToggleModule,
     SharedModule,
-    WelcomeModule
+    WelcomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

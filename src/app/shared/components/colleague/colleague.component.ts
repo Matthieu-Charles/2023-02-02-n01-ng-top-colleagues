@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
+import {ColleagueService} from "../../../providers/colleague.service";
 
 @Component({
   selector: 'tc-colleague',
@@ -15,12 +16,14 @@ export class ColleagueComponent{
     score: 1
   }
 
-  majCompteur(val: LikeHate){
-    if(val == LikeHate.LIKE) {
-      this.colleague.score++
-    } else {
-      this.colleague.score--
-    }
+  constructor(private colleagueServ: ColleagueService) {
+  }
+
+  envoiVote(val: LikeHate){
+    this.colleagueServ.vote(val, this.colleague)
+      .subscribe((colleague) => {
+        this.colleague = colleague;
+      });
   }
 
 }

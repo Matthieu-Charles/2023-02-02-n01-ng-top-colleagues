@@ -1,4 +1,4 @@
-<button mat-raised-button color="primary" (click)="LikeOrHate(LikeHate.LIKE)" *ngIf="compteur<=1000">J'aime</button>
-<button mat-raised-button color="accent" (click)="LikeOrHate(LikeHate.HATE)" *ngIf="compteur>=-1000">Je déteste</button>
+<button mat-raised-button color="primary" (click)="LikeOrHate(LikeHate.LIKE)" [disabled] = "compteur<=1000? null : true">J'aime</button>
+<button mat-raised-button color="accent" (click)="LikeOrHate(LikeHate.HATE)" [disabled] = "compteur>=-1000? null : true">Je déteste</button>
 
 
