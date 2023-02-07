@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Colleague} from "../models/colleague";
-import {Observable, Subject} from "rxjs";
+import {Observable, Subject, tap} from "rxjs";
 import {LikeHate} from "../models/like-hate";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {VoteApi} from "../models/voteApi";
@@ -25,10 +25,6 @@ export class ColleagueService {
       return this.http.get<Colleague[]>('https://dev.cleverapps.io/api/v2/colleagues')
   }
 
-  getColleague(colleaguePseudo: string){
-      return this.http.get<Colleague>('https://dev.cleverapps.io/api/v2/colleagues/' + colleaguePseudo)
-  }
-
   vote(val: LikeHate, colleague: Colleague) :Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -43,6 +39,8 @@ export class ColleagueService {
           "pseudo": colleague.pseudo
         },
         httpOptions
+      ).pipe(
+        tap(()=> this.emit(val))
       );
   }
 

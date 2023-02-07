@@ -5,6 +5,7 @@
     </mat-card-content>
   </mat-card>
 
-  <tc-vote *ngFor="let vote of listVotes; let i=index" [vote] = vote (suppressionVote)="majListe($event)" [colindex] = i></tc-vote>
+  <tc-vote *ngFor="let vote of tabVotes" [vote] = "vote"></tc-vote>
 </div>
+
 

@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {VoteService} from "../../../providers/vote.service";
+import {Vote} from "../../../models/vote";
+import {Subscription} from "rxjs";
+import {ColleagueService} from "../../../providers/colleague.service";
 
 @Component({
   selector: 'tc-voting-history',
@@ -8,14 +11,19 @@ import {VoteService} from "../../../providers/vote.service";
 })
 export class VotingHistoryComponent {
 
-  constructor(private srvVote: VoteService) {
-  }
+  tabVotes: Vote[] = [];
 
-  listVotes = this.srvVote.listeVote();
+  actionSub: Subscription
 
-  majListe(val: number){
-      console.log(val);
-      this.listVotes.splice(val, 1);
+  constructor(private srvVote: VoteService, private colleagueSrv: ColleagueService) {
+
+    this.srvVote.listeVote()
+      .subscribe((tabVotes) => this.tabVotes = tabVotes);
+    //Abonnement au clic sur un bouton "j'aime" ou "je déteste"
+    this.actionSub = this.colleagueSrv.actionObs.subscribe(() => {
+      //Rechargement de la liste lors de l'événement
+      this.srvVote.listeVote()
+        .subscribe((tabVotes) => this.tabVotes = tabVotes)})
   }
 
 }

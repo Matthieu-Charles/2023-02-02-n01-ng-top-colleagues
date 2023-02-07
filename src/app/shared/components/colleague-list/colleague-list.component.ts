@@ -14,7 +14,6 @@ export class ColleagueListComponent {
     this.cls.list().subscribe((tabColleague => this.tabCollegue = tabColleague));
   }
 
-
 }
 
 

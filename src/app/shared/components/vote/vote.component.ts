@@ -17,16 +17,13 @@ export class VoteComponent {
         score: 654,
         photo: "https://via.placeholder.com/150"
       },
-    vote: LikeHate.LIKE
+    vote: LikeHate.LIKE,
+    score: 0,
   };
 
-  @Input() colindex:number = 0;
 
   @Output() suppressionVote:EventEmitter<number> = new EventEmitter<number>();
   clickSuppressionVote(){
-    if (this.vote != undefined)  {
-      this.suppressionVote.emit(this.colindex);
-    }
   }
 
 }
