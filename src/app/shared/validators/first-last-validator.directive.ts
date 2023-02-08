@@ -11,13 +11,14 @@ export class FirstLastValidatorDirective implements  Validator{
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    let name = control.value.name;
-    let last = control.value.last;
+    let name = control.value.prenom;
+    let last = control.value.nom;
+    console.log(control);
+
     if (name != last) {
       return null;
-    } else {
-      return { firstLast : 'first name must be different from lastname' }
     }
+      return { firstLast : 'first name must be different from lastname' }
   }
 }
 

@@ -16,6 +16,8 @@
       le champ doit comporter au minimum deux caractères
     </p>
 
+    <p *ngIf="monForm.errors != null && nom.touched && prenom.touched">{{ monForm.errors | json }}</p>
+
   </div>
 
   <div>
@@ -36,5 +38,5 @@
     </p>
 
   </div><br>
-  <button type="submit" *ngIf="monForm.valid && monForm.dirty">Valider</button>
+  <button type="submit" [disabled]="monForm.invalid">Valider</button>
 </form>
