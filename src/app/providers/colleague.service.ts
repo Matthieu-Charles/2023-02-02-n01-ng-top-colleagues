@@ -75,7 +75,7 @@ export class ColleagueService {
           "pseudo":  colleague.pseudo,
           "last" :  colleague.last,
           "first": colleague.first,
-          "photo" :  "https://randomuser.me/api/portraits/men/90.jpg"
+          "photo" :  "https://randomuser.me/api/portraits/men/24.jpg"
         },
         httpOptions
       )

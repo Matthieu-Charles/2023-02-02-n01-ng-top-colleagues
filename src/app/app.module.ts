@@ -8,7 +8,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {WelcomeModule} from "./pages/welcome/welcome.module";
 import {HttpClientModule} from "@angular/common/http";
 import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CreateColleagueReactiveModule} from "./pages/create-colleague-reactive/create-colleague-reactive.module";
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import {FormsModule} from "@angular/forms";
         WelcomeModule,
         HttpClientModule,
         CreateColleagueModule,
-        FormsModule
+        FormsModule,
+        CreateColleagueReactiveModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

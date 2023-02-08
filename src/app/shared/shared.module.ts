@@ -13,9 +13,10 @@ import { CounterComponent } from './components/counter/counter.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
+import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +29,18 @@ import { PseudoValidatorDirective } from './validators/pseudo-validator.directiv
     CounterComponent,
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
-    PseudoValidatorDirective
+    PseudoValidatorDirective,
+    CreateColleagueReactiveFormsComponent
   ],
-    exports: [
-        LikeHateComponent,
-        ColleagueComponent,
-        ColleagueListComponent,
-        VotingHistoryComponent,
-        CounterComponent,
-        CreateColleagueFormsComponent
-    ],
+  exports: [
+    LikeHateComponent,
+    ColleagueComponent,
+    ColleagueListComponent,
+    VotingHistoryComponent,
+    CounterComponent,
+    CreateColleagueFormsComponent,
+    CreateColleagueReactiveFormsComponent
+  ],
     imports: [
         CommonModule,
         MatButtonModule,
@@ -45,7 +48,8 @@ import { PseudoValidatorDirective } from './validators/pseudo-validator.directiv
         MatCardModule,
         MatIconModule,
         MatBadgeModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class SharedModule { }
