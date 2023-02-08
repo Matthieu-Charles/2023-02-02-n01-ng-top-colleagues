@@ -16,8 +16,7 @@
       le champ doit comporter au minimum deux caractères
     </p>
 
-    <p *ngIf="monForm.errors != null && nom.touched && prenom.touched">{{ monForm.errors | json }}</p>
-
+    <p *ngIf="monForm.errors?.firstLast && nom.touched">{{ monForm.errors?.firstLast }}</p>
   </div>
 
   <div>

@@ -13,8 +13,6 @@ export class FirstLastValidatorDirective implements  Validator{
   validate(control: AbstractControl): ValidationErrors | null {
     let name = control.value.prenom;
     let last = control.value.nom;
-    console.log(control);
-
     if (name != last) {
       return null;
     }
