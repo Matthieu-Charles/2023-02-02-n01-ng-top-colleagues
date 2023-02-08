@@ -21,9 +21,11 @@
 
   <div>
     <label>Pseudo</label><br>
-    <input [(ngModel)]="createColleagueForm.pseudo" name="pseudo" #pseudo="ngModel" required>
+    <input [(ngModel)]="createColleagueForm.pseudo" name="pseudo" #pseudo="ngModel" required tcPseudoValidator>
 
-    <p *ngIf="pseudo.dirty && pseudo.invalid">
+    <p>{{ pseudo.errors?.pseudoValidator }}</p>
+
+    <p *ngIf="pseudo.pristine && pseudo.touched">
       le champ est obligatoire
     </p>
 

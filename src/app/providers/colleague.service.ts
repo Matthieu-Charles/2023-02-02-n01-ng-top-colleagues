@@ -22,6 +22,10 @@ export class ColleagueService {
     this.action.next(data);
   }
 
+  getColleagueByPseudo(pseudo: string) {
+    return this.http.get<boolean>('https://dev.cleverapps.io/api/v2/colleagues/' + pseudo)
+  }
+
   list(): Observable<Colleague[]> {
       return this.http.get<Colleague[]>('https://dev.cleverapps.io/api/v2/colleagues')
   }
