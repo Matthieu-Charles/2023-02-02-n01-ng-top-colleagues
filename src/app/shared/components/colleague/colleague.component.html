@@ -1,9 +1,9 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>{{colleague.pseudo | uppercase}}</mat-card-title>
+    <mat-card-title><a href="colleagues/{{ this.colleague.pseudo}}">{{colleague.pseudo | uppercase}}</a></mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{colleague.photo}}" alt="Photo of {{colleague.pseudo}}">
+  <img mat-card-image src="{{colleague.photo}}" alt="Photo of {{colleague.pseudo}}" >
   <mat-card-content>
     <p>
       {{colleague.score | score}}
@@ -12,7 +12,6 @@
   <mat-card-actions>
     <tc-like-hate (clickLoveOrHate)="envoiVote($event)" [compteur] = this.colleague.score></tc-like-hate>
   </mat-card-actions>
-  <a (click)="voirDetailColleague()">lien vers fiche</a>
 </mat-card>
 
 
