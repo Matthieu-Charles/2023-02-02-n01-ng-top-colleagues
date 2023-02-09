@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
 import {ColleagueService} from "../../../providers/colleague.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'tc-colleague',
@@ -16,7 +17,7 @@ export class ColleagueComponent{
     score: 1
   }
 
-  constructor(private colleagueServ: ColleagueService) {
+  constructor(private colleagueServ: ColleagueService, private router: Router) {
   }
 
   envoiVote(val: LikeHate){
@@ -26,4 +27,7 @@ export class ColleagueComponent{
       });
   }
 
+  voirDetailColleague() {
+    this.router.navigate(['colleagues/:pseudo', {pseudo: this.colleague.pseudo}])
+  }
 }

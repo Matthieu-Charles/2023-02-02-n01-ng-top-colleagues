@@ -42,7 +42,7 @@ export class CreateColleagueReactiveFormsComponent {
 
     console.log(control.value);
 
-    return this.colleagueSrv.getColleagueByPseudo(control.value)
+    return this.colleagueSrv.existsColleagueByPseudo(control.value)
       .pipe(map((isUsed) => {
           return !isUsed ? null : {
             pseudoValidator: 'pseudo exists already.'

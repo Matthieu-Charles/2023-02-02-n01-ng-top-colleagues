@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { ColleagueDetailComponent } from './components/colleague-detail/colleague-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
     PseudoValidatorDirective,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    ColleagueDetailComponent
   ],
   exports: [
     LikeHateComponent,

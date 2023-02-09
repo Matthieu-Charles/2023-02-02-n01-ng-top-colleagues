@@ -5,6 +5,7 @@ import {LikeHate} from "../models/like-hate";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {VoteApi} from "../models/voteApi";
 import {createColleagueForm} from "../models/createColleagueForm";
+import {ColleagueApi} from "../models/colleagueApi";
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,12 @@ export class ColleagueService {
     this.action.next(data);
   }
 
-  getColleagueByPseudo(pseudo: string) {
+  existsColleagueByPseudo(pseudo: string) {
     return this.http.get<boolean>('https://dev.cleverapps.io/api/v2/colleagues/' + pseudo)
+  }
+
+  getColleagueByPseudo(pseudo: string) {
+    return this.http.get<ColleagueApi>('https://dev.cleverapps.io/api/v2/colleagues/' + pseudo)
   }
 
   list(): Observable<Colleague[]> {

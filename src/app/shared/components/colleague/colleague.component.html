@@ -12,6 +12,7 @@
   <mat-card-actions>
     <tc-like-hate (clickLoveOrHate)="envoiVote($event)" [compteur] = this.colleague.score></tc-like-hate>
   </mat-card-actions>
+  <a (click)="voirDetailColleague()">lien vers fiche</a>
 </mat-card>
 
 
