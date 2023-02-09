@@ -10,24 +10,34 @@ import {HttpClientModule} from "@angular/common/http";
 import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CreateColleagueReactiveModule} from "./pages/create-colleague-reactive/create-colleague-reactive.module";
+import { MenuComponentComponent } from './menu/menu-component/menu-component.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { AppRoutingModule } from './app-routing.module';
+import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponentComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatSlideToggleModule,
-        SharedModule,
-        WelcomeModule,
-        HttpClientModule,
-        CreateColleagueModule,
-        FormsModule,
-        CreateColleagueReactiveModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    SharedModule,
+    WelcomeModule,
+    HttpClientModule,
+    CreateColleagueModule,
+    FormsModule,
+    CreateColleagueReactiveModule,
+    ReactiveFormsModule,
+    MatTabsModule,
+    AppRoutingModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
