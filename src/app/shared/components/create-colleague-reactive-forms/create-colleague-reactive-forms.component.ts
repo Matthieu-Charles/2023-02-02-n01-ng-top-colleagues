@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, ValidationErrors, AbstractControl} from "@angular/forms";
 import {createColleagueForm} from "../../../models/createColleagueForm";
 import {ColleagueService} from "../../../providers/colleague.service";
-import {map, Observable} from "rxjs";
+import {map, Observable, of, catchError} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class CreateColleagueReactiveFormsComponent {
 
   createColleagueForm = new createColleagueForm();
 
-  constructor(private colleagueSrv: ColleagueService, private fb: FormBuilder) {
+  constructor(private colleagueSrv: ColleagueService, private fb: FormBuilder, private router: Router) {
     this.myReacForm = this.fb.group({
       prenom: ['', [Validators.required, Validators.minLength(2)]],
       nom: ['', [Validators.required, Validators.minLength(2)]],
@@ -43,11 +44,13 @@ export class CreateColleagueReactiveFormsComponent {
     console.log(control.value);
 
     return this.colleagueSrv.existsColleagueByPseudo(control.value)
-      .pipe(map((isUsed) => {
-          return !isUsed ? null : {
+      .pipe(map((col) => {
+          return  {
             pseudoValidator: 'pseudo exists already.'
-          };
-        })
+          }}),
+            catchError(
+              () => of(null)
+            )
       );
   }
   onSubmit() {
@@ -58,6 +61,11 @@ export class CreateColleagueReactiveFormsComponent {
     console.log(this.createColleagueForm);
     this.colleagueSrv.createColleague(this.createColleagueForm)
       .subscribe(data => console.log(data))
+    this.retourListeCollegues();
+  }
+
+  retourListeCollegues(){
+    this.router.navigate(['accueil']);
   }
 
 }

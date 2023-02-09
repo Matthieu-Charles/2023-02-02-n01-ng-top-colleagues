@@ -24,7 +24,7 @@ export class ColleagueService {
   }
 
   existsColleagueByPseudo(pseudo: string) {
-    return this.http.get<boolean>('https://dev.cleverapps.io/api/v2/colleagues/' + pseudo)
+    return this.http.get<ColleagueApi>('https://dev.cleverapps.io/api/v2/colleagues/' + pseudo)
   }
 
   getColleagueByPseudo(pseudo: string) {

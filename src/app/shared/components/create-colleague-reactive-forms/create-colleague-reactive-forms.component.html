@@ -1,15 +1,20 @@
 <form [formGroup]="myReacForm" (ngSubmit)="onSubmit()">
+
   <label>Prénom : <input formControlName = "prenom" ></label><br>
   <p *ngIf="myReacForm.hasError('firstLast') && myReacForm.controls['nom'].touched">{{ myReacForm.getError('firstLast') }}</p>
   <p *ngIf="myReacForm.controls['prenom'].hasError('required') && myReacForm.controls['prenom'].touched">Ce champ est obligatoire</p>
   <p *ngIf="myReacForm.controls['prenom'].hasError('minlength')">2 lettres minimum</p>
+
   <label>Nom : <input formControlName = "nom" ></label><br>
   <p *ngIf="myReacForm.controls['nom'].invalid && myReacForm.controls['nom'].touched">Ce champ est obligatoire</p>
   <p *ngIf="myReacForm.controls['nom'].hasError('minlength')">2 lettres minimum</p>
+
   <label>Pseudo : <input formControlName = "pseudo" ></label><br>
   <p *ngIf="myReacForm.controls['pseudo'].hasError('pseudoValidator')">ce pseudo existe déjà</p>
   <p *ngIf="myReacForm.controls['pseudo'].invalid && myReacForm.controls['pseudo'].touched">Ce champ est obligatoire</p>
+
   <label>Photo Url : <input formControlName = "photoUrl" ></label><br>
   <p *ngIf="myReacForm.controls['photoUrl'].invalid && myReacForm.controls['photoUrl'].touched">Ce champ est obligatoire</p>
   <button type="submit" [disabled]="!myReacForm.valid">Valider</button><br>
-</form><br><br>
+
+</form>
